@@ -3,3 +3,7 @@ werkzeug
 flask
 pandas
 PyYAML
+psycopg2-binary==2.8.4
+laserembeddings
+sentence_transformers
+google-cloud-translate
