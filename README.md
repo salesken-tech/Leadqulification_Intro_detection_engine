@@ -5,3 +5,5 @@ install the laserembedder using
 ```
 python -m laserembeddings download-models
 ```
+
+run the main.py
