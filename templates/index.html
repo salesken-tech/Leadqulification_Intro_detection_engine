@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lead_INTRO_ENGINE</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.js"></script>
+
+    <script src="../static/index.js"></script>
+
+<style>
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.pace-inactive {
+	display: none;
+}
+
+.pace .pace-progress {
+	background: #ed4d67;
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 100%;
+	width: 100%;
+	height: 4px;
+}
+
+
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.mr-20 {
+	margin-right: 20px;
+}
+
+.v-input-box {
+	height: 40px;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.02);
+	border: solid 1px #eeeeee;
+	background-color: #ffffff;
+	font-size: 14px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.v-btn-primary {
+	height: 40px;
+	background-color: #ed4d67;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	outline: none;
+	border: 0;
+}
+
+.v-select-box {
+	height: 30px;
+	border: solid 1px #cccccc;
+	background-color: #ffffff;
+	font-size: 14px;
+	color: #999999;
+	padding: 5px 10px 5px 10px;
+}
+
+.header {
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #ffffff;
+}
+
+.fw-500 {
+	font-weight: 500;
+}
+
+/* Ripple Styles start */
+.ripple {
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	/* transform: translate(-50%, -50%); */
+}
+
+.ripple:hover {
+	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px
+		rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+	transition: 0.2s all ease-in-out;
+}
+
+.ripple:active {
+	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px
+		rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+	transition: 0.2s all ease-in-out;
+}
+
+.ripple .ripple-animation {
+	position: absolute;
+	border-radius: 100%;
+	animation: ripple 0.8s;
+	transform: scale(0);
+}
+
+.ripple-light .ripple-animation {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.ripple-dark .ripple-animation {
+	background: rgba(1, 1, 1, 0.3);
+}
+
+.mx-80 {
+	margin-left: 80px;
+	margin-right: 80px;
+}
+
+.px-80 {
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.py-20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.py-10 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.pt-20 {
+	padding-top: 20px;
+}
+
+.pb-10 {
+	padding-bottom: 10px;
+}
+
+.text-999 {
+	color: #999999;
+}
+
+.text-43425d {
+	color: #43425d;
+}
+
+.text-444 {
+	color: #444444;
+}
+
+.bg-fff {
+	background: #ffffff;
+}
+
+.f-14 {
+	font-size: 14px;
+}
+
+.f-24 {
+	font-size: 24px;
+}
+
+.border-right-dahsed {
+	border-right: 2px dashed #eeeeee;
+}
+
+/* Start of Radio Related */
+.v-radio-btn {
+	position: relative;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.v-radio-btn>input {
+	display: none;
+}
+
+.v-radio-btn .v-radio-btn-style {
+	position: relative;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #999999;
+	border-radius: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.v-radio-btn .v-radio-btn-style:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background: #ed4d67;
+	transform: scale(0);
+	transition: all 0.2s ease;
+	opacity: 0.08;
+	pointer-events: none;
+}
+
+.v-radio-btn:hover .v-radio-btn-style:after {
+	transform: scale(3);
+}
+
+input[type="radio"]:checked+.v-radio-btn-style {
+	border-color: #ed4d67;
+}
+
+input[type="radio"]:checked+.v-radio-btn-style:after {
+	transform: scale(1);
+	transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+	opacity: 1;
+}
+
+input[type="radio"]:disabled+.v-radio-btn-style {
+	border: 2px solid #cccccc;
+}
+
+input[type="radio"]:disabled ~.v-radio-btn-label {
+	color: #cccccc;
+}
+
+.resultTable>div.row {
+	margin: 1px 0px 1px 0px;
+	box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+ 	opacity:0.5;
+}
+
+.resultTable>div.row:nth-child(even) {
+	background-color: #f9f9f9 !important;
+}
+
+/* End of radio related */
+.shadow-inset {
+	box-shadow: inset 0px 20px 77px -74px rgba(0, 0, 0, 0.75);
+}
+
+@
+keyframes ripple { 100% {
+	transform: scale(2);
+	opacity: 0;
+}
+
+}
+
+</style>
+</head>
+<body>
+    <div class="small text-center" style="padding-top:50px">
+      <h1>Lead-Qauli-Intro-Engine</h1>
+    </div>
+
+<!--    <div align="right" style="padding-right: 50px;padding-top:50px">-->
+<!--&lt;!&ndash;        <input id="organization" type="text" name="organization" size="5" placeholder="org_id" >&ndash;&gt;-->
+<!--        <select id = "organization">-->
+<!--               <option value = "1">Byju's</option>-->
+<!--        </select>-->
+<!--&lt;!&ndash;        <input id="product_id" type="text" name="product_id" size="5" placeholder="pro_id" >&ndash;&gt;-->
+<!--        <select id = "product_id">-->
+<!--            <option value = "149">Product_1</option>-->
+<!--            <option value = "150">Product_2</option>-->
+<!--        </select>-->
+<!--        <input id="threshold" type="text" name="threshold" size="5" placeholder="threshold">-->
+<!--        <input id='fileid' type='file' name='file' onchange="check_values()" />-->
+<!--        <input type="submit" value="Upload"  id="upload_file" onclick="submit_form()"/>-->
+<!--    </div>-->
+<div align="right" style="padding-right: 50px;padding-top:50px">
+    <form id='formid' action="http://localhost:8080/upload_file" method="POST" enctype="multipart/form-data">
+        <input id="organization" type="text" name="organization" size="5" placeholder="org_id" >
+        <input id="product_id" type="text" name="product_id" size="5" placeholder="pro_id" >
+        <input id="threshold" type="text" name="threshold" size="5" placeholder="threshold">
+        <input id='fileid' type='file' name='file' onchange="check_threshold()" />
+        <input type="submit" value="Upload"  id="upload_file" />
+    </form>
+</div>
+
+</body>
+</html>

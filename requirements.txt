@@ -1,0 +1,5 @@
+jsonpickle
+werkzeug
+flask
+pandas
+PyYAML

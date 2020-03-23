@@ -1,0 +1,20 @@
+#please comment one of the embedders in the sken_singleton file or you will be fucked
+
+host: 35.200.234.61
+password: cx6ac54nmgGtLD1y
+db_name: analytics
+min_pool: 5
+max_pool: 10
+
+encoding_method: LASER
+
+roberta_path: /home/andy/Desktop/chirag_models/roberta-base-nli-stsb-mean-tokens
+
+loop_back_path: src/resources/loopback.xlsx
+
+google_project_id: complex-app-300ee
+language_depth: 10
+
+facet_names: [key value proposition,aspiration setting,need investigation,interest,budget,authority,]
+dimension_names: [Introduction,Lead-Qualification]
+upload_folder: /tmp/

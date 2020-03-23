@@ -1,0 +1,67 @@
+--drop table if exists dimension
+
+create table dimension(
+id serial primary key,
+name_ varchar(50) not null
+)
+
+--drop table if exists facet
+
+create table facet(
+id serial primary key,
+name_ varchar(50) not null,
+dim_id int not null,
+foreign key (dim_id) references dimension(id) on delete cascade
+
+)
+
+
+--drop table if exists facet_signal
+
+create table facet_signal(
+id serial primary key,
+value varchar not null,
+facet_id int not null,
+org_id int not null,
+product_id int not null,
+foreign key(facet_id) references facet(id) on delete cascade
+)
+
+
+--drop table if exists new_snippet
+
+CREATE TABLE new_snippet (
+	id serial primary key,
+	from_time float8 ,
+	to_time float8 ,
+	confidence float8 NULL,
+	text_ varchar NOT NULL,
+	speaker varchar NOT NULL,
+	snippet_list varchar,
+	task_id int
+)
+
+--drop table if exists caught_facets
+
+create table caught_facets(
+id serial primary key,
+new_snippet_id int not null,
+snippet_text varchar,
+fact_signal_id int not null,
+facet_signal_text varchar,
+facet_name varchar,
+dimension_name varchar,
+score float,
+foreign key (new_snippet_id) references new_snippet(id) on delete cascade,
+foreign key (fact_signal_id) references facet_signal(id) on delete cascade
+)
+
+
+--drop table if exists generated_facet_signals
+
+create table generated_facet_signals(
+id serial primary key,
+value varchar,
+facet_signal_id int,
+foreign key (facet_signal_id) references facet_signal(id) on delete cascade
+)
